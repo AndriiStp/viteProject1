@@ -1,5 +1,5 @@
 import { Component } from "react";
-
+import FeedbackOptions from "./components/FeedbackOptions";
 import Statistics from "./components/Statistics/Statistics";
 import "./App.css";
 
@@ -35,15 +35,10 @@ class App extends Component {
     return (
       <div>
         <h1>Please leave Feedback</h1>
-        <button type="button" onClick={() => this.handleClick("good")}>
-          Good
-        </button>
-        <button type="button" onClick={() => this.handleClick("neutral")}>
-          Neutral
-        </button>
-        <button type="button" onClick={() => this.handleClick("bad")}>
-          Bad
-        </button>
+        <FeedbackOptions
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.handleClick()}
+        />
         {totalFeedback ? (
           <Statistics
             good={good}

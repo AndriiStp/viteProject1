@@ -1,1 +1,1 @@
-export default {Statistics} from './Statistics.jsx'
+export { default } from "./Statistics.jsx";
